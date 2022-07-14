@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Circular'
       ),
-      initialRoute: VerificationPage.id,
+      initialRoute: GetStartedPage.id,
       routes: {
         GetStartedPage.id : (context) => const GetStartedPage(),
         CreateAccount.id : (context) => const CreateAccount(),
