@@ -38,6 +38,7 @@ class NormalTextField extends StatelessWidget {
             hintText: text,
             hintStyle: kTextStyleThree,
             suffixIcon: suffixIcon,
+            contentPadding: const EdgeInsets.all(20)
           ),
         ),
         SizedBox(height: height! * 0.05,)
@@ -84,10 +85,12 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         TextFormField(
           controller: widget._controller,
           keyboardType: widget.inputType,
+          obscureText: showPassword,
           decoration: InputDecoration(
             prefixIcon: Icon(widget.prefixIcon, size: 20,),
             hintText: widget.text,
             hintStyle: kTextStyleThree,
+            contentPadding: const EdgeInsets.all(20),
             suffixIcon: IconButton(
               onPressed: () {
                 if (showPassword == true) {

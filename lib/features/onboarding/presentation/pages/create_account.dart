@@ -20,7 +20,12 @@ class _CreateAccountState extends State<CreateAccount> {
     double? height = SizeConfig.screenHeight;
     double? width = SizeConfig.screenWidth;
 
-    TextEditingController _controller = TextEditingController();
+    TextEditingController _firstNameController = TextEditingController();
+    TextEditingController _lastNameController = TextEditingController();
+    TextEditingController _phoneNumberController = TextEditingController();
+    TextEditingController _emailAddressController = TextEditingController();
+    TextEditingController _passwordController = TextEditingController();
+    TextEditingController _referralCodeController = TextEditingController();
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -55,7 +60,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   style: kTextStyleThree),
               SizedBox(height: height * 0.06),
               NormalTextField(
-                controller: _controller,
+                controller: _firstNameController,
                 height: height,
                 text: 'First Name',
                 prefixIcon: FontAwesomeIcons.user,
@@ -63,7 +68,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 inputType: TextInputType.text,
               ),
               NormalTextField(
-                controller: _controller,
+                controller: _lastNameController,
                 height: height,
                 text: 'Last Name',
                 prefixIcon: FontAwesomeIcons.user,
@@ -71,15 +76,15 @@ class _CreateAccountState extends State<CreateAccount> {
                 inputType: TextInputType.text,
               ),
               NormalTextField(
-                controller: _controller,
+                controller: _phoneNumberController,
                 height: height,
                 text: 'Phone Number',
                 prefixIcon: FontAwesomeIcons.mobileScreenButton,
                 suffixIcon: Image.asset('images/countryNormal.png'),
-                inputType: TextInputType.number,
+                inputType: TextInputType.phone,
               ),
               NormalTextField(
-                controller: _controller,
+                controller: _emailAddressController,
                 height: height,
                 text: 'Email Address',
                 prefixIcon: FontAwesomeIcons.at,
@@ -87,7 +92,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 inputType: TextInputType.emailAddress,
               ),
               PasswordTextField(
-                controller: _controller,
+                controller: _passwordController,
                 height: height,
                 text: 'Password',
                 prefixIcon: FontAwesomeIcons.lock,
@@ -95,7 +100,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 inputType: TextInputType.text,
               ),
               NormalTextField(
-                controller: _controller,
+                controller: _referralCodeController,
                 height: height,
                 text: 'Referral Code',
                 prefixIcon: FontAwesomeIcons.shareNodes,

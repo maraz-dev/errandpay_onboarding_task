@@ -25,27 +25,33 @@ class _VerificationPageState extends State<VerificationPage> {
   bool timeElapsed = false;
 
   void startTimer() {
-    countDownTimer =
-        Timer.periodic(const Duration(seconds: 1), (_) => setCountDown());
+    if (mounted) {
+      countDownTimer =
+          Timer.periodic(const Duration(seconds: 1), (_) => setCountDown());
+    }
   }
 
   void setCountDown() {
     const reduceTimer = 1;
-    setState(() {
-      final seconds = timerDuration.inSeconds - reduceTimer;
-      if (seconds < 0) {
-        countDownTimer!.cancel();
-        timeElapsed = true;
-      } else {
-        timerDuration = Duration(seconds: seconds);
-      }
-    });
+    if (mounted) {
+      setState(() {
+        final seconds = timerDuration.inSeconds - reduceTimer;
+        if (seconds < 0) {
+          countDownTimer!.cancel();
+          timeElapsed = true;
+        } else {
+          timerDuration = Duration(seconds: seconds);
+        }
+      });
+    }
   }
 
   void resetTimer() {
-    setState(() => timerDuration = const Duration(seconds: 40));
-    startTimer();
-    timeElapsed = false;
+    if (mounted) {
+      setState(() => timerDuration = const Duration(seconds: 40));
+      startTimer();
+      timeElapsed = false;
+    }
   }
 
   void stopTimer() {
@@ -56,7 +62,16 @@ class _VerificationPageState extends State<VerificationPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    startTimer();
+    if (mounted) {
+      startTimer();
+    }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    stopTimer();
   }
 
   @override
@@ -101,12 +116,14 @@ class _VerificationPageState extends State<VerificationPage> {
                 appContext: context,
                 onChanged: (_) {},
                 onCompleted: (_) {
-                  setState(() {
-                    isCompleted = true;
-                    if (countDownTimer == null || countDownTimer!.isActive) {
-                      stopTimer();
-                    }
-                  });
+                  if (mounted) {
+                    setState(() {
+                      isCompleted = true;
+                      if (countDownTimer == null || countDownTimer!.isActive) {
+                        stopTimer();
+                      }
+                    });
+                  }
                 },
                 length: 5,
                 keyboardType: TextInputType.number,
@@ -123,8 +140,8 @@ class _VerificationPageState extends State<VerificationPage> {
                               tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                           child: const Text(
                             'Try Again? ',
-                            style:
-                                TextStyle(fontSize: 18, color: Color(0xFFFF2A52)),
+                            style: TextStyle(
+                                fontSize: 18, color: Color(0xFFFF2A52)),
                           ),
                         ),
                   Text(
@@ -148,7 +165,9 @@ class _VerificationPageState extends State<VerificationPage> {
                   : Column(
                       children: [
                         const Text('or', style: kTextStyleFive),
-                        SizedBox(height: height * 0.03,),
+                        SizedBox(
+                          height: height * 0.03,
+                        ),
                         GeneralButton(
                           height: height,
                           width: width,
