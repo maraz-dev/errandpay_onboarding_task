@@ -1,5 +1,5 @@
 import 'package:errandoay_onboarding/core/utils/utils.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/widgets/general_button.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/widgets/general_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:errandoay_onboarding/core/utils/utils.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/pages/account_created.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/widgets/general_button.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/pages/account_created.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/widgets/general_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';

@@ -1,5 +1,5 @@
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/pages/verification.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/widgets/widgets.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/pages/verification.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

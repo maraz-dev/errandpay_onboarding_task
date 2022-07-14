@@ -1,7 +1,7 @@
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/pages/account_created.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/pages/create_account.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/pages/get_started_page.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/pages/verification.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/pages/account_created.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/pages/create_account.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/pages/get_started_page.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/pages/verification.dart';
 import 'package:flutter/material.dart';
 
 void main() {

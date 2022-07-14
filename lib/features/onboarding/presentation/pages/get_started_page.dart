@@ -1,5 +1,5 @@
 import 'package:errandoay_onboarding/core/utils/colors.dart';
-import 'package:errandoay_onboarding/feautures/onboarding/presentation/pages/create_account.dart';
+import 'package:errandoay_onboarding/features/onboarding/presentation/pages/create_account.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
